@@ -48,24 +48,24 @@ public class StringLoops {
   }
 
   public static String reverseWords(String sentence) {
-    String newSentence = sentence + " "; int count = 0; boolean firstSpace = false;
+    String newSentence = sentence + " "; int count = 0; boolean lastSpace = false;
     int index2 = -1;int index1 = -1;
     String sol = " ";
     for (int i = newSentence.length(); i > 0; i--){
       boolean add = false;
-      if (newSentence.substring(i-1, i).equals(" ") && !firstSpace){
-        firstSpace = true;
+      if (newSentence.substring(i-1, i).equals(" ") && !lastSpace){
+        lastSpace = true;
         index2 = i;
         System.out.println("index2: " + index2);
-      }else if(newSentence.substring(i-1, i).equals(" ") && firstSpace){
+      }else if(newSentence.substring(i-1, i).equals(" ") && lastSpace){
         count++;
-        firstSpace = false;
+        lastSpace = false;
         index1 = i;
         System.out.println("index1: " + index1);
         add = true;
         
       }
-      if(add){
+      if(add ){
         sol += newSentence.substring(index1, index2);
       }
 
@@ -80,6 +80,6 @@ public class StringLoops {
     //System.out.println(reverseCharacters("taco cat"));
     //System.out.println(Arrays.toString(indexesOfAll("b", "attack")));
     //System.out.println(hasRepeatedConsecutives("alibi"));
-    System.out.println(reverseWords("taco cat"));
+    System.out.println(reverseWords("10 9 8 7 6 5 4 3 2 1 0"));
   }
 }
