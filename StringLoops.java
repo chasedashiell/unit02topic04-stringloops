@@ -56,12 +56,13 @@ public class StringLoops {
       if (newSentence.substring(i-1, i).equals(" ") && !lastSpace){
         lastSpace = true;
         index2 = i;
-        System.out.println("index2: " + index2);
       }else if(newSentence.substring(i-1, i).equals(" ") && lastSpace){
         count++;
+        System.out.println(count);
         lastSpace = false;
         index1 = i;
         System.out.println("index1: " + index1);
+        System.out.println("index2: " + index2);
         add = true;
         
       }
